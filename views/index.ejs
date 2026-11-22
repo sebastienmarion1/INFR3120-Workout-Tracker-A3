@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<%// adding in the header and footer shared partials %>
+
+<%- include('partials/header') %>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+    <%//changing the welcome paragraph to introduce my site %>
+    <p>Record your workouts and track your progress. Review your exercises, sets, reps, and weight improvements over time.</p>
+
+    <%// adding a button to take the user to the workouts page, as shown in class using bootstrap%>
+    <a href="/workouts" class="btn btn-primary">View Workouts</a
+
+<%- include('partials/footer') %>

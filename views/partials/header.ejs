@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%// Making the layout able to adjust to phone and tablet width %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= title %></title>
+
+    <%// Using bootstrap for the styling and form as shown in class %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <%// navigation adapted from the CRUB part 1 lecture %>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Workout Tracker</a>
+
+                <u1 class="navbar-link">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/workouts">Workouts</a>
+                    </li>
+                </u1>
+            </div>
+        </nav>
+    </header>
+<%// page content starts after main, so everything above is shared, and closes in the footer partial%>
+    <main class="container">
