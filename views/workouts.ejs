@@ -2,6 +2,36 @@
 
 <%// making the workout list page %>
 <h1>My Workouts</h1>
-<p>Your saved workouts will appear here.</p>
+
+<%// This the form for creating a workout. %>
+<a href="/workouts/add" class="btn btn-primary">Add Workout</a>
+
+<%// Shows how many workout records were from mongodb. %>
+<p>Saved workouts: <%= workoutList.length %></p>
+
+<%// Displaying the workout records in a table, which was adapted from the CRUD part 1 lecture ones again. the list.ejs example specifically. %>
+<table class="table table-bordered table-striped table-hover">
+  <%// header row in the table %>
+  <tr>
+    <th>Exercise</th>
+    <th>Muscle Group</th>
+    <th>Sets</th>
+    <th>Reps</th>
+    <th>Weight (lbs)</th>
+    <th>Date</th>
+  </tr>
+
+  <%// displays each workout in a row of the table %>>
+  <% for(let count=0; count<workoutList.length; count++) { %>
+    <tr>
+      <td><%= workoutList[count].exerciseName %></td>
+      <td><%= workoutList[count].muscleGroup %></td>
+      <td><%= workoutList[count].sets %></td>
+      <td><%= workoutList[count].reps %></td>
+      <td><%= workoutList[count].weight %></td>
+      <td><%= workoutList[count].date %></td>
+    </tr>
+  <% } %>
+</table>
 
 <%- include('partials/footer') %>

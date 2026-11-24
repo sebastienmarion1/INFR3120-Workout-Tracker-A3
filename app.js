@@ -1,3 +1,21 @@
+//Taken from the CRUB lecture example.
+require('dotenv').config();
+
+// Database connection adapted from the CRUD Part-1 lecture example.
+const mongoose = require('mongoose');
+let DB = require('./config/db');
+
+mongoose.connect(DB.URI);
+let mongoDB = mongoose.connection;
+
+// Will show if there is an error 
+mongoDB.on('error', console.error.bind(console, 'Connection Error'));
+
+// will display a message when the database connection opens.
+mongoDB.once('open', () => {
+  console.log('Connected to Workout Tracker MongoDB');
+});
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
