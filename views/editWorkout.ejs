@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+
+<h1><%= title %></h1>
+
+<%// This is the same adapted form from the crud lecture, also used in addWorkout %>
+<form class="form" method="post">
+  <div class="form-group">
+    <label for="exerciseName">Exercise Name</label>
+    <input type="text" class="form-control"
+           id="exerciseName" name="exerciseName"
+           value="<%= workout.exerciseName %>" required>
+  </div>
+
+  <div class="form-group">
+    <label for="muscleGroup">Muscle Group</label>
+    <input type="text" class="form-control"
+           id="muscleGroup" name="muscleGroup"
+           value="<%= workout.muscleGroup %>" required>
+  </div>
+
+  <div class="form-group">
+    <label for="sets">Sets</label>
+    <input type="number" class="form-control"
+           id="sets" name="sets" min="1" step="1"
+           value="<%= workout.sets %>" required>
+  </div>
+
+  <div class="form-group">
+    <label for="reps">Reps per Set</label>
+    <input type="number" class="form-control"
+           id="reps" name="reps" min="1" step="1"
+           value="<%= workout.reps %>" required>
+  </div>
+
+  <div class="form-group">
+    <label for="weight">Weight (lbs)</label>
+    <input type="number" class="form-control"
+           id="weight" name="weight" min="0" step="0.5"
+           value="<%= workout.weight %>" required>
+  </div>
+
+
+  <%// this way of putting the date converts the stored date to the normal YYYY-MM-DD
+  <div class="form-group">
+    <label for="date">Date Performed</label>
+    <input type="date" class="form-control"
+           id="date" name="date"
+           value="<%= workout.date.toISOString().split('T')[0] %>"
+           required>
+  </div>
+
+  <br>
+
+  <button class="btn btn-primary" type="submit">Save Changes</button>
+  <a href="/workouts" class="btn btn-warning">Cancel</a>
+</form>
+
+<%- include('partials/footer') %>

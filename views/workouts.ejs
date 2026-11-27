@@ -19,9 +19,10 @@
     <th>Reps</th>
     <th>Weight (lbs)</th>
     <th>Date</th>
+    <th>Actions</th>
   </tr>
 
-  <%// displays each workout in a row of the table %>>
+  <%// displays each workout in a row of the table %>
   <% for(let count=0; count<workoutList.length; count++) { %>
     <tr>
       <td><%= workoutList[count].exerciseName %></td>
@@ -30,6 +31,17 @@
       <td><%= workoutList[count].reps %></td>
       <td><%= workoutList[count].weight %></td>
       <td><%= workoutList[count].date %></td>
+      <td>
+      <a href="/workouts/edit/<%= workoutList[count]._id %>"
+        class="btn btn-primary">Edit</a>
+
+        <%// confirmation message to delete %>
+        <a href="/workouts/delete/<%= workoutList[count]._id %>"
+          class="btn btn-danger"
+          onclick="return confirm('Are you sure you want to delete this workout?');">
+          Delete
+        </a>
+      </td>
     </tr>
   <% } %>
 </table>

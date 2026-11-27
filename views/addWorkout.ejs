@@ -1,6 +1,48 @@
 <%- include('partials/header') %>
 
+<%// ADAPTED FROM NOV 16TH CLASS CRUD, using the add form example %>
 <h1>Add Workout</h1>
-<p>Enter your workout information below.</p>
+<form class="form" method="post">
+  <div class="form-group">
+    <label for="exerciseName">Exercise Name</label>
+    <input type="text" class="form-control"
+           id="exerciseName" name="exerciseName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="muscleGroup">Muscle Group</label>
+    <input type="text" class="form-control"
+           id="muscleGroup" name="muscleGroup" required>
+  </div>
+
+  <div class="form-group">
+    <label for="sets">Sets</label>
+    <input type="number" class="form-control"
+           id="sets" name="sets" min="1" step="1" required>
+  </div>
+
+  <div class="form-group">
+    <label for="reps">Reps per Set</label>
+    <input type="number" class="form-control"
+           id="reps" name="reps" min="1" step="1" required>
+  </div>
+
+  <div class="form-group">
+    <label for="weight">Weight (lbs)</label>
+    <input type="number" class="form-control"
+           id="weight" name="weight" min="0" step="0.5" required>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Date Performed</label>
+    <input type="date" class="form-control"
+           id="date" name="date" required>
+  </div>
+
+  <br>
+
+  <button class="btn btn-primary" type="submit">Save Workout</button>
+  <a href="/workouts" class="btn btn-warning">Cancel</a>
+</form>
 
 <%- include('partials/footer') %>
