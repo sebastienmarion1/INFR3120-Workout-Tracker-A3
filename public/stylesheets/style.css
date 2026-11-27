@@ -9,7 +9,40 @@ a {
 main {
   padding-top: 24px;
 }
-/* moved the footer text to the right a bit */
+/* moved the footer text to the right and spaced down a bit */
 footer {
+  padding-top: 24px;
   padding-left: 20px;
+}
+
+/* adding in more styling for my site after adding all the functionality */
+
+body {
+  background-color: #f3f5f7;
+  color: #202c39;
+}
+
+.navbar {
+  background-color: #173b35;
+}
+
+h1 {
+  color: #173b35;
+  margin-bottom: 20px;
+}
+
+/* I noticed everything in the table was very close together, so I added a bit of spacing */
+.form-group {
+  margin-bottom: 16px;
+}
+
+/*This part matches the main buttons to the nav colour, I think it looks better */
+.btn-primary {
+  background-color: #173b35;
+  border-color: #173b35;
+}
+
+.btn-primary:hover {
+  background-color: #24594f;
+  border-color: #24594f;
 }
